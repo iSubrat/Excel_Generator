@@ -1,8 +1,8 @@
-name: Run Python script every minute
+name: Run Python script every 5 seconds
 
 on:
   schedule:
-    - cron: '* * * * *'  # Runs the workflow every minute
+    - cron: '*/5 * * * * *'  # Runs the workflow every 5 seconds
 
 jobs:
   run_script:
@@ -21,4 +21,4 @@ jobs:
         run: pip install -r requirements.txt  # If you have any dependencies, add them to requirements.txt
 
       - name: Run Python script
-        run: python main.py  # Replace `your_script.py` with the name of your Python script
+        run: python your_script.py  # Replace `your_script.py` with the name of your Python script
