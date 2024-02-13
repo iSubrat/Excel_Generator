@@ -1,25 +1,25 @@
-name: Run Main Script Every 32th Minutes
+name: Run Main Script Every 6 Minutes
 
 on:
   schedule:
-    - cron: '32 * * * *'
+    - cron: '*/6 * * * *'  # Run every 6 minutes
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'  # specify your Python version here
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
 
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt  # If you have any dependencies listed in requirements.txt
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
 
-      - name: Run main.py
-        run: python main.py
+    - name: Run main.py
+      run: python main.py
