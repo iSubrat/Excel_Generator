@@ -1,7 +1,7 @@
 import datetime
 import time
 
-while True:
+for i in range(10):
     # Get current date and time
     current_time = datetime.datetime.now()
 
@@ -9,4 +9,4 @@ while True:
     print("Current time:", current_time.time())
 
     # Wait for 1 minute before the next iteration
-    time.sleep(60)
+    time.sleep(5)
