@@ -1,7 +1,7 @@
 import datetime
 import time
 
-for i in range(10):
+for i in range(2):
     # Get current date and time
     current_time = datetime.datetime.now()
 
