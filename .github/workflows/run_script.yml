@@ -1,24 +1,15 @@
-name: Run Python script every 5 seconds
+name: Run Script Every 5 Minutes
 
 on:
   schedule:
-    - cron: '* * * * *'  # Runs the workflow every 5 seconds
+    - cron: "*/5 * * * *"
 
 jobs:
   run_script:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'  # Choose the version you want to use
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt  # If you have any dependencies, add them to requirements.txt
-
       - name: Run Python script
-        run: python your_script.py  # Replace `your_script.py` with the name of your Python script
+        run: python path/to/your/script.py
