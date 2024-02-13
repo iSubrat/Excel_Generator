@@ -49,6 +49,8 @@ try:
     session.cwd('domains/appcollection.in/public_html/work/')
     with open("Meeting Data.xlsx", 'rb') as file:
         session.storbinary('STOR Meeting Data.xlsx', file)
+    with open("Meeting Data.xlsx", 'rb') as file:
+        session.storbinary(f'STOR Backup_Meeting_Data_{current_timestamp}.xlsx', file)
     session.quit()
     print('Excel File uploaded to the Server.')
 except Exception as e:
