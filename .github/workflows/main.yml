@@ -1,8 +1,8 @@
-name: Run Main Script Every 5 Minutes
+name: Run Main Script Every 32th Minutes
 
 on:
   schedule:
-    - cron: '32 * * * *'  # This schedule runs the job every 5 minutes
+    - cron: '32 * * * *'
 
 jobs:
   build:
