@@ -13,6 +13,7 @@ db_password = os.environ['DB_PASSWORD']
 ftp_host = os.environ['FTP_HOST']
 ftp_user = os.environ['FTP_USER']
 ftp_password = os.environ['FTP_PASSWORD']
+ftp_path = os.environ['FTP_PATH']
 
 try:
     print('Script Running...')
@@ -46,7 +47,7 @@ try:
     cursor.close()
     cnx.close()
     session = ftplib.FTP(ftp_host, ftp_user, ftp_password)
-    session.cwd('domains/appcollection.in/public_html/work/')
+    session.cwd(ftp_path)
     with open("Meeting Data.xlsx", 'rb') as file:
         session.storbinary('STOR Meeting Data.xlsx', file)
     with open("Meeting Data.xlsx", 'rb') as file:
