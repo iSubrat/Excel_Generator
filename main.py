@@ -48,8 +48,11 @@ try:
     cnx.close()
     session = ftplib.FTP(ftp_host, ftp_user, ftp_password)
     session.cwd(ftp_path)
-    with open("Meeting Data.xlsx", 'rb') as file:
-        session.storbinary('STOR Meeting Data.xlsx', file)
+    
+    if datetime.datetime.now() <= datetime.datetime(2024, 3, 5): # Year, Month, Day
+        with open("Meeting Data.xlsx", 'rb') as file:
+            session.storbinary('STOR Meeting Data.xlsx', file)
+
     with open("Meeting Data.xlsx", 'rb') as file:
         session.storbinary(f'STOR Backup_Meeting_Data_{current_timestamp}.xlsx', file)
     session.quit()
